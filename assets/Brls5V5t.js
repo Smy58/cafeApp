@@ -1,0 +1,1 @@
+import{T as o,r as t,j as r}from"./R5l8HrxH.js";const C=o("cafes",()=>{const s=t([]),a=t([]),f=r(()=>a.value);return{cafes:s,setItems:e=>{e!=null&&e.length&&(s.value=e)},setCurCafe:e=>{a.value=e},getCafe:f}});export{C as u};
