@@ -1,6 +1,6 @@
 <template>
 	<div class="cafe-header">
-		<div class="cafe-header__img"></div>
+		<div class="cafe-header__img" :style="`background-image: url(${info.image})`"></div>
 		<div class="cafe-header__content">
 			<h2 class="cafe-header__name">{{ info.name }}</h2>
 			<p class="cafe-header__address">{{ info.address }}</p>
@@ -42,6 +42,9 @@ export default {
 		width: 100%;
 		height: 200px;
 		background: #f2f2f2;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 	&__content {

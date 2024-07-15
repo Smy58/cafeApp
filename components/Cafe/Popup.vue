@@ -89,7 +89,8 @@ export default {
 				count: this.count,
 				totalCost: this.totalCost,
 				addons: this.orderAddons,
-				ingredients: this.orderIngredients
+				ingredients: this.orderIngredients,
+				image: this.orderItem.image
 			}
 
 			addItem(order);
@@ -141,6 +142,7 @@ export default {
 				id: this.position.id,
 				name: this.position.name,
 				cost: this.position.cost,
+				image: this.position.image
 			}
 		}
 	},

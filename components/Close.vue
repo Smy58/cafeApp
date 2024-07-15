@@ -1,6 +1,6 @@
 <template>
 	<div @click="goBack" class="close">
-		<IconClose width="14px" height="14px" color="#fff" />
+		<IconClose width="24px" height="24px" color="#fff" />
 	</div>
 </template>
 
@@ -20,15 +20,14 @@ export default {
 		align-items: center;
 		justify-content: center;
 
-		width: 24px;
-		height: 24px;
-		padding: 5px;
+		width: 28px;
+		height: 28px;
 		box-sizing: border-box;
 
 		position: absolute;
 		top: 8px;
 		right: 16px;
-		background: #E0E0E0;
+		background: #00000033;
 
 		border-radius: 8px;
 	}

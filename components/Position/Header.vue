@@ -1,6 +1,6 @@
 <template>
 	<div class="position-header">
-		<div class="position-header__img"></div>
+		<div class="position-header__img" :style="`background-image: url(${posInfo.image})`"></div>
 		<div class="position-header__content">
 			<h2 class="position-header__name">{{ posInfo.name }}</h2>
 			<p class="position-header__info">{{ posInfo.info }}</p>
@@ -38,6 +38,10 @@ export default {
 		width: 100%;
 		height: 250px;
 		background: #f2f2f2;
+
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
 	}
 
 	&__content {

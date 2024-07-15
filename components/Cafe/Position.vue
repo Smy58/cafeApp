@@ -1,8 +1,8 @@
 <template>
 	<div class="position">
 		<div class="position__content">
-			<div class="position__img">
-				<IconPlate :color="'#f2f2f2'"/>
+			<div class="position__img" :style="`background-image: url(${position.image})`">
+				<IconPlate v-if="position.image === ''" :color="'#f2f2f2'"/>
 			</div>
 			<h4 class="position__name">{{ name }}</h4>
 		</div>
@@ -19,7 +19,8 @@ export default {
 	data() {
 		return {
 			name: this.position?.name || '',
-			cost: this.position?.cost || 0
+			cost: this.position?.cost || 0,
+			image: this.position?.image || ''
 		}
 	},
 	computed: {
@@ -65,6 +66,9 @@ export default {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
 	}
 
 	&__name {

@@ -1,7 +1,7 @@
 <template>
 	<div class="busket-position">
-		<div class="busket-position__img">
-			<IconPlate :color="'#f2f2f2'" />
+		<div class="busket-position__img" :style="`background-image: url(${image})`">
+			<IconPlate v-if="image === ''" :color="'#f2f2f2'" />
 		</div>
 		<div class="busket-position__content">
 			<h3 class="busket-position__title">{{ name }}</h3>
@@ -31,13 +31,17 @@ export default {
 		onChange: Function,
 		onDel: Function
 	},
+	beforeMount() {
+		console.log(this.item);
+	},
 	data() {
 		return {
 			name: this.item?.name || '',
 			addons: this.item?.addons || [],
 			ingredients: this.item?.ingredients || [],
 			cost: this.item?.totalCost || 0,
-			count: this.item?.count || 1
+			count: this.item?.count || 1,
+			image: this.item?.image || '',
 		}
 	},
 	methods: {
@@ -97,6 +101,21 @@ export default {
 		align-items: center;
 
 		padding: 12px 0;
+
+		&__img {
+			width: 97px;
+			height: 97px;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+
+			border-radius: 12px;
+		}
 
 		&__content {
 			display: flex;

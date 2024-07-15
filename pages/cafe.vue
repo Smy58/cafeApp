@@ -89,7 +89,6 @@ export default {
 	background: #F2F2F2;
 
 	box-sizing: border-box;
-	padding-top: 25px;
 
 	&__bg {
 		z-index: 100;
