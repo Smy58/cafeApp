@@ -1,1 +1,0 @@
-import{_ as a}from"./y7MkZmKR.js";import{u as s}from"./CfhJ4hzW.js";import{_ as n,v as c,a5 as _,L as d,M as m,t as o}from"./C36Jqkuh.js";const u={computed:{isLoad(){const{getLoader:e}=s();return e}}};function p(e,l,f,i,L,t){const r=a;return o(),c("div",null,[_(e.$slots,"default"),t.isLoad?(o(),d(r,{key:0})):m("",!0)])}const B=n(u,[["render",p]]);export{B as default};
