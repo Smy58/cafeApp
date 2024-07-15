@@ -7,6 +7,8 @@
 
 <script>
 import { useCafes } from '@/store/cafes.js'
+import { useLoader } from '@/store/loader.js'
+
 import cafeApi from '@/api/cafes.js'
 
 export default {
@@ -22,12 +24,15 @@ export default {
 	},
 	async beforeMount() {
 		const { setItems } = useCafes()
+		const { setLoader } = useLoader()
 		const cafes = ref([]);
 
+
+		setLoader(true)
 		await cafeApi.getCafes()
 		const { data } = await cafeApi.getCafes()
 		cafes.value = await data?.value;
-
+		setLoader(false)
 
 		setItems( cafes.value )
 

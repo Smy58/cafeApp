@@ -5,10 +5,13 @@
 			<IconMenu />
 		</button>
 		<slot />
+		<Loader v-if="isLoad" />
 	</div>
 </template>
 
 <script>
+import { useLoader } from '@/store/loader.js'
+
 export default {
 	data() {
 		return {
@@ -20,6 +23,12 @@ export default {
 			this.isNav = !this.isNav
 		}
 	},
+	computed: {
+		isLoad() {
+			const { getLoader } = useLoader()
+			return getLoader
+		}
+	}
 }
 </script>
 

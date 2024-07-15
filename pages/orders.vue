@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import mockData from '../assets/Data/cafe.js'
-
 import { useOrder } from '@/store/order.js'
+import { useLoader } from '@/store/loader.js'
+
 import orderApi from '@/api/orders.js'
 
 export default {
@@ -26,13 +26,15 @@ export default {
 	},
 	async beforeMount() {
 		const { setItems } = useOrder()
+		const { setLoader } = useLoader()
+
 		const ordersRef = ref([]);
 
+		setLoader(true)
 		await orderApi.getOrders()
 		const { data } = await orderApi.getOrders()
 		ordersRef.value = await data?.value;
-
-		console.log(ordersRef.value);
+		setLoader(false)
 
 		setItems( ordersRef.value )
 

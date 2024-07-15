@@ -14,6 +14,8 @@
 <script>
 import { useCafes } from '@/store/cafes.js'
 import { useBusket } from '@/store/busket.js'
+import { useLoader } from '@/store/loader.js'
+
 import cafeApi from '@/api/cafes.js'
 
 export default {
@@ -56,13 +58,16 @@ export default {
 	},
 	async beforeMount() {
 		const { setCurCafe } = useCafes()
+		const { setLoader } = useLoader()
 		const cafe = ref({})
 
 		let cafeId = JSON.parse(this.$route.query.cafeId)
 
+		setLoader(true)
 		await cafeApi.getCafeId(cafeId)
 		const { data } = await cafeApi.getCafeId(cafeId)
 		cafe.value = await data?.value;
+		setLoader(false)
 
 		setCurCafe( cafe.value )
 

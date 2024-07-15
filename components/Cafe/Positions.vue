@@ -21,6 +21,8 @@ export default {
 	flex-wrap: wrap;
 	column-gap: 12px;
 	row-gap: 16px;
+	
+	justify-content: center;
 
 }
 

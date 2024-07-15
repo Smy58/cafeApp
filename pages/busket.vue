@@ -38,6 +38,8 @@
 <script>
 import { useBusket } from '@/store/busket.js'
 import { useCafes } from '@/store/cafes.js'
+import { useLoader } from '@/store/loader.js'
+
 import ordersApi from '@/api/orders.js'
 
 
@@ -74,6 +76,8 @@ export default {
 		},
 		async confirmOrder() {
 			const { getCafe } = useCafes()
+			const { setLoader } = useLoader()
+
 			// console.log(getCafe);
 			let order = {
 				busket: this.busketStore,
@@ -83,9 +87,11 @@ export default {
 				waitingTime: getCafe.waitingTime,
 			}
 			console.log(order);
+			setLoader(true)
 			ordersApi.addOrder(order)
 				.then((res) => {
 					console.log(res.value);
+					setLoader(false)
 					this.$router.push({
 						path: '/ok', 
 						query: { order: JSON.stringify(res.value) }
