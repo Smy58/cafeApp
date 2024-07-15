@@ -6,7 +6,7 @@ export default defineNuxtConfig({
 		'@pinia/nuxt',
 	],
 	app: {
-		baseURL: '/cafe/',
+		baseURL: '/cafeApp/',
 		buildAssetsDir: 'assets'
 	}
 	
