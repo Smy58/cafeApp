@@ -4,7 +4,7 @@
 		<div class="ingredient__field" v-for="item in list" :key="item.id">
 			<input @click="onChange(item)" type="radio" :name="id" :id="item.id" class="ingredient__radio">
 			<label :for="item.id" class="ingredient__label">{{ item.name }}</label>
-			<p class="ingredient__cost">+ {{ item.cost }} ₸</p>
+			<p class="ingredient__cost">+ {{ item.cost }} т</p>
 		</div>
 
 	</div>

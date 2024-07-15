@@ -2,7 +2,7 @@
 	<div class="addons__field">
 		<input @click="toogleInput" type="checkbox" :name="item.id" :id="item.id" class="addons__checkbox">
 		<label :for="item.id" class="addons__label">{{ item.name }}</label>
-		<p class="addons__cost">+ {{ item.cost }} ₸</p>
+		<p class="addons__cost">+ {{ item.cost }} т</p>
 	</div>
 </template>
 

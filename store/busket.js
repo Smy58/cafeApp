@@ -18,6 +18,8 @@ export const useBusket = defineStore("busket", () => {
 		newItems.push(item);
 
 		busket.value = newItems
+
+		localStorage.setItem("busket", JSON.stringify(busket.value))
 	}
 
 	const delItem = (id) => {
@@ -26,6 +28,8 @@ export const useBusket = defineStore("busket", () => {
 		newItems.splice(ind, 1)
 
 		busket.value = newItems
+
+		localStorage.setItem("busket", JSON.stringify(busket.value))
 	}
 
 	const changeCount = (changedItem) => {
@@ -38,9 +42,13 @@ export const useBusket = defineStore("busket", () => {
 			}
 		})
 		busket.value = newItems
+
+		localStorage.setItem("busket", JSON.stringify(busket.value))
 	}
 
-
+	const clearBusket = () => {
+		busket.value = []
+	}
 
 
 
@@ -50,6 +58,7 @@ export const useBusket = defineStore("busket", () => {
 		addItem,
 		delItem,
 		changeCount,
+		clearBusket,
 		getBusket
 	}
 })

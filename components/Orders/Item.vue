@@ -4,7 +4,7 @@
 		<p class="order-item__text">Ваш заказ принят</p>
 		<div class="order-item__info">
 			<p class="order-item__info-text"><span>Заведение:</span> <span>{{ cafeName }}</span></p>
-			<p class="order-item__info-text"><span>Сумма:</span> <span>{{ strCost }} ₸</span></p>
+			<p class="order-item__info-text"><span>Сумма:</span> <span>{{ strCost }} т</span></p>
 			<p class="order-item__info-text"><span>Время ожидания:</span> <span>{{ waitingTime }} мин</span></p>
 		</div>
 		<p class="order-item__busket">

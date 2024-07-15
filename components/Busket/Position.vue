@@ -6,7 +6,7 @@
 		<div class="busket-position__content">
 			<h3 class="busket-position__title">{{ name }}</h3>
 			<p class="busket-position__text">{{ infoText }}</p>
-			<p class="busket-position__cost">{{ strCost }} ₸</p>
+			<p class="busket-position__cost">{{ strCost }} т</p>
 
 			<div class="busket-position__count">
 				<button @click="minusCount" class="busket-position__count-btn">

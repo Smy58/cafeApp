@@ -1,6 +1,6 @@
 <template>
 	<div class="button-bar">
-		<p class="button-bar__text">Итого: <b>{{ totalCost }}</b></p>
+		<p class="button-bar__text">Итого: <b>{{ totalCost }} т</b></p>
 
 		<div class="button-bar__control">
 			<div class="button-bar__count">

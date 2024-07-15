@@ -1,6 +1,6 @@
 <template>
 	<div class="busket-bar">
-		<p class="busket-bar__text">Итого: <b>{{ busketCost }} ₸</b></p>
+		<p class="busket-bar__text">Итого: <b>{{ busketCost }} т</b></p>
 		<button @click="openConfirm" class="busket-bar__btn">Перейти к оплате</button>
 	</div>
 </template>

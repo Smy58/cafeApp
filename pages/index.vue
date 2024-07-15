@@ -8,6 +8,7 @@
 <script>
 import { useCafes } from '@/store/cafes.js'
 import { useLoader } from '@/store/loader.js'
+import { useBusket } from '@/store/busket.js'
 
 import cafeApi from '@/api/cafes.js'
 
@@ -25,6 +26,7 @@ export default {
 	async beforeMount() {
 		const { setItems } = useCafes()
 		const { setLoader } = useLoader()
+		const { clearBusket } = useBusket()
 		const cafes = ref([]);
 
 
@@ -37,7 +39,10 @@ export default {
 		setItems( cafes.value )
 
 		this.cafeList = [...cafes.value]
-		
+
+
+		localStorage.removeItem('busket');
+		clearBusket()
 	},
 	computed: {
 		filterStatusList () {

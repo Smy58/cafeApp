@@ -5,8 +5,8 @@
 			<h2 class="cafe-header__name">{{ info.name }}</h2>
 			<p class="cafe-header__address">{{ info.address }}</p>
 			<div class="cafe-header__info">
-				<div :class="`cafe-header__status ${ info.status ? 'cafe-header__status_open' : '' }`"></div>
-				<p class="cafe-header__text">{{ info.status ? 'Open' : 'Closed' }}</p>
+				<div :class="`cafe-header__status ${ status ? 'cafe-header__status_open' : '' }`"></div>
+				<p class="cafe-header__text">{{ status ? 'Open' : 'Closed' }}</p>
 			</div>
 			<div class="cafe-header__info">
 				<IconClock color="#757575"/>
@@ -21,6 +21,28 @@
 export default {
 	props: {
 		info: Object
+	},
+	computed: {
+		status() {
+			if (this.info.startWorkTime && this.info.endWorkTime) {
+				let dt = new Date()
+
+				let start = this.info.startWorkTime.split(':')
+				let end = this.info.endWorkTime.split(':')
+
+				let dt1 = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 
+					parseInt(start[0]), parseInt(start[1]));
+
+				let dt2 = new Date(dt.getFullYear(), dt.getMonth(), dt.getDate(), 
+					parseInt(end[0]), parseInt(end[1]));
+
+				return dt1 <= dt && dt <= dt2
+			}
+			
+
+			return false
+
+		}
 	}
 }
 </script>

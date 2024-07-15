@@ -10,9 +10,6 @@ export default class Http {
 	}
 
 	static post(path, data) {
-		console.log('post');
-		console.log(path);
-		console.log(data);
 		return useFetch(() => path, {
 			method: "post",
 			...this.options(),

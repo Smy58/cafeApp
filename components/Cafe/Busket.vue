@@ -1,7 +1,7 @@
 <template>
 	<div class="cafe-busket">
 		<div class="cafe-busket__content">
-			<p class="cafe-busket__cost">К оплате: <b>{{ costString }} ₸</b></p>
+			<p class="cafe-busket__cost">К оплате: <b>{{ costString }} т</b></p>
 			<div @click="openBusket" class="btn cafe-busket__btn">Смотреть заказ</div>
 		</div>
 	</div>

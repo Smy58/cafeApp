@@ -17,8 +17,8 @@ export default {
 
 .positions {
 	width: 100%;
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	column-gap: 12px;
 	row-gap: 16px;
 	

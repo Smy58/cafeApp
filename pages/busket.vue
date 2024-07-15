@@ -1,8 +1,8 @@
 <template>
 	<div class="busket-page">
-		<Close />
+		<Close :onClose="goBack" />
 		<h2 class="busket-page__title">Заказ</h2>
-		<div class="busket-page__list">
+		<div v-if="busketStore.length != 0" class="busket-page__list">
 			<BusketPosition v-for="item in busketStore" :key="item.id" 
 				:item="item"
 				:onMinus="handleMinus"
@@ -10,7 +10,9 @@
 				:onChange="handleChange"
 				:onDel="handleDel"
 			/>
+			<BusketMenu />
 		</div>
+
 
 		<div v-if="busketStore.length == 0" class="busket-page__empty">
 			<div class="busket-page__icon">
@@ -103,6 +105,14 @@ export default {
 			this.$router.go(-1)
 		}
 	},
+	beforeMount() {
+		const { setItems } = useBusket()
+		const localBusket = JSON.parse(localStorage.getItem('busket'))
+
+		if (localBusket) {
+			setItems(localBusket)
+		}
+	},
 	computed: {
 		cafeName() {
 			const { getCafe } = useCafes()
@@ -114,11 +124,14 @@ export default {
 		},
 		busketStore() {
 			const { getBusket } = useBusket()
+
 			let busket = getBusket
-			return busket || []
+
+			return busket
 		},
 		busketCost() {
 			let sum = 0
+			console.log(this.busketStore);
 			this.busketStore.forEach(element => {
 				sum += (element.totalCost * element.count)
 			});

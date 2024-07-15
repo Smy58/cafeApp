@@ -1,6 +1,6 @@
 <template>
 	<div class="cafe">
-		<Close />
+		<Close :onClose="exit" />
 		<CafeHeader :info="cafe"/>
 		<CafeMenu :menu="cafe.menu" :onOpenPos="openPosition" />
 
@@ -42,6 +42,9 @@ export default {
 		}
 	},
 	methods: {
+		exit() {
+			this.$router.push('/')
+		},
 		tooglePopup() {
 			this.isPopup = !this.isPopup
 			if (this.isPopup) {
@@ -72,6 +75,10 @@ export default {
 		setCurCafe( cafe.value )
 
 		this.cafe = cafe.value
+
+		if (this.cafe.notWorking) {
+			this.$router.push('/notworking')
+		}
 
 	}
 }

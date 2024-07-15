@@ -6,7 +6,7 @@
 				<img :src="okImg" alt="Ok">
 			</div>
 			<h3 class="ok-page__title">Ваш заказ принят</h3>
-			<p class="ok-page__cost">{{ orderInfo.totalCost }} ₸</p>
+			<p class="ok-page__cost">{{ orderInfo.totalCost }} т</p>
 			<p class="ok-page__info">Номер заказа: {{ orderInfo.id }}</p>
 			<p class="ok-page__info">Время ожидания: {{ orderInfo.waitingTime }}</p>
 		</div>

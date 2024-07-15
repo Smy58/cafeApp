@@ -1,15 +1,13 @@
 <template>
-	<div @click="goBack" class="close">
+	<div @click="onClose" class="close">
 		<IconClose width="24px" height="24px" color="#fff" />
 	</div>
 </template>
 
 <script>
 export default {
-	methods: {
-		goBack() {
-			this.$router.go(-1)
-		}
+	props: {
+		onClose: Function
 	}
 }
 </script>

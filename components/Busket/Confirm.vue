@@ -11,7 +11,7 @@
 			</div>
 			<div class="confirm__info">
 				<p class="confirm__text">Сумма</p>
-				<p class="confirm__value">{{ costToStr(busketCost) }} ₸</p>
+				<p class="confirm__value">{{ costToStr(busketCost) }} т</p>
 			</div>
 			<div class="confirm__info">
 				<div class="confirm__bonus">
@@ -23,7 +23,7 @@
 
 			<div class="confirm__info">
 				<p class="confirm__text confirm__text_bold">К оплате</p>
-				<p class="confirm__value confirm__value_bold">{{ costToStr(totalPayment) }} ₸</p>
+				<p class="confirm__value confirm__value_bold">{{ costToStr(totalPayment) }} т</p>
 			</div>
 		</div>
 		
@@ -36,7 +36,7 @@
 			<div class="confirm__payment-type">
 				<img :src="imageGold" alt="kaspiGold" class="confirm__payment-img">
 				<p class="confirm__payment-name">Kaspi Gold</p>
-				<p class="confirm__payment-cost">{{ bankHide ? '******' : '300 000'}} ₸</p>
+				<p class="confirm__payment-cost">{{ bankHide ? '******' : '300 000'}} т</p>
 			</div>
 			<button @click="confirmOrder" class="confirm__btn">Оплатить</button>
 		</div>

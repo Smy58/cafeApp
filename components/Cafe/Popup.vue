@@ -137,7 +137,6 @@ export default {
 			return sum
 		},
 		orderItem() {
-			// console.log(this.position);
 			return {
 				id: this.position.id,
 				name: this.position.name,
@@ -200,7 +199,7 @@ export default {
 	z-index: 120;
 
 	transform: translateY(100%);
-	transition: transform 1s ease, top 0.1s ease, bottom 1s ease;
+	transition: transform 0.5s ease, top 0.1s ease, bottom 0.5s ease;
 	border-top-left-radius: 24px;
 	border-top-right-radius: 24px;
 

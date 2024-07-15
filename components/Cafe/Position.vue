@@ -6,7 +6,7 @@
 			</div>
 			<h4 class="position__name">{{ name }}</h4>
 		</div>
-		<button @click="openPosition" class="position__btn">{{ costString }} ₸</button>
+		<button @click="openPosition" class="position__btn">{{ costString }} т</button>
 	</div>
 </template>
 
